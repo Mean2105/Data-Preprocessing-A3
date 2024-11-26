@@ -1,0 +1,17 @@
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report, accuracy_score
+
+# Initialize models
+log_model = LogisticRegression()
+tree_model = DecisionTreeClassifier()
+rf_model = RandomForestClassifier(n_estimators=100)
+
+# Train models
+log_model.fit(X_train, y_train)
+tree_model.fit(X_train, y_train)
+rf_model.fit(X_train, y_train)
+
+# Make predictions using Random Forest
+y_pred_rf = rf_model.predict(X_test)
