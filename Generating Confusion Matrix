@@ -1,0 +1,11 @@
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Confusion Matrix
+cm = confusion_matrix(y_test, y_pred_rf)
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+plt.title('Confusion Matrix for Random Forest Model')
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.show()
